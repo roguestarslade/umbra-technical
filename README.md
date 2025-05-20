@@ -1,6 +1,6 @@
 # Umbra Propulsion Countdown Server
 
-A terminal-based TCP command processor and countdown system designed for embedded simulation, eSports-style infrastructure, or mission-critical satellite control.
+A terminal-based TCP command processor and countdown system.
 
 ---
 
@@ -58,6 +58,23 @@ A terminal-based TCP command processor and countdown system designed for embedde
 
 ---
 
+## 🧰 Prerequisites
+
+If you're using **WSL2 / Ubuntu 20.04+**, install the following to compile and run this project:
+
+### Install Build Tools
+```bash
+sudo apt-get update && \
+sudo apt-get install -y build-essential g++ make netcat
+```
+
+This installs:
+- `g++` – C++ compiler
+- `make` – to build with the Makefile
+- `netcat` – to simulate TCP client input for testing
+
+---
+
 ## 🧪 Usage
 
 ### Build
@@ -78,15 +95,6 @@ nc localhost 8124
 10    # override with a faster command
 -1    # cancel pending command
 ```
-
----
-
-## 🛠 Features
-
-- Header-only architecture (no cmake, no linker hell)
-- ANSI terminal updates (no ncurses needed)
-- Single-threaded TCP read, safe multi-threaded command execution
-- Modular design — plug and play in embedded, sim, or eSports contexts
 
 ---
 
